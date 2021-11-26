@@ -7,6 +7,8 @@
 
 import Foundation
 
+//Interface for viewModel interaction with api service
+
 protocol DataRepositoryProtocol {
     func fetchUser(completion: @escaping (User?, NetError?) -> Void)
     

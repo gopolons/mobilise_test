@@ -7,6 +7,8 @@
 
 import Foundation
 
+//Api service which simulates asyncronous data fetching from remote server
+
 protocol ApiServiceProtocol {
     func fetchUser(completion: @escaping (User?, NetError?) -> Void)
     

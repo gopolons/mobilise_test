@@ -8,6 +8,8 @@
 import Foundation
 import Network
 
+//Class that allows to check for internet connection
+
 class Connectivity {
 
    var pathMonitor: NWPathMonitor!

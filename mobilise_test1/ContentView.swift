@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         PaymentView()
+            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
     }
 }
 

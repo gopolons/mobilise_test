@@ -17,6 +17,8 @@
 		941362C227510A34003EE6CF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941362C127510A34003EE6CF /* ApiService.swift */; };
 		941362C427510B01003EE6CF /* ReponseEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941362C327510B01003EE6CF /* ReponseEnums.swift */; };
 		941362C927510D88003EE6CF /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941362C827510D88003EE6CF /* Connectivity.swift */; };
+		941362CC27513B8E003EE6CF /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = 941362CB27513B8E003EE6CF /* SPAlert */; };
+		941362CE27513FD5003EE6CF /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941362CD27513FD4003EE6CF /* UIApplicationExtensions.swift */; };
 		947613A8274FEF8600E02531 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947613A7274FEF8600E02531 /* PaymentView.swift */; };
 		947613AB274FFD2300E02531 /* AmountSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947613AA274FFD2300E02531 /* AmountSelector.swift */; };
 		947613AD274FFD3800E02531 /* GetPaidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947613AC274FFD3800E02531 /* GetPaidButton.swift */; };
@@ -58,6 +60,7 @@
 		941362C127510A34003EE6CF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		941362C327510B01003EE6CF /* ReponseEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReponseEnums.swift; sourceTree = "<group>"; };
 		941362C827510D88003EE6CF /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		941362CD27513FD4003EE6CF /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		947613A7274FEF8600E02531 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		947613AA274FFD2300E02531 /* AmountSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountSelector.swift; sourceTree = "<group>"; };
 		947613AC274FFD3800E02531 /* GetPaidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaidButton.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941362CC27513B8E003EE6CF /* SPAlert in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				941362B127510174003EE6CF /* TextExtensions.swift */,
+				941362CD27513FD4003EE6CF /* UIApplicationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +254,9 @@
 			dependencies = (
 			);
 			name = mobilise_test1;
+			packageProductDependencies = (
+				941362CB27513B8E003EE6CF /* SPAlert */,
+			);
 			productName = mobilise_test1;
 			productReference = 94CAD488274D7D1D001FE06B /* mobilise_test1.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 94CAD47F274D7D1D001FE06B;
+			packageReferences = (
+				941362CA27513B8E003EE6CF /* XCRemoteSwiftPackageReference "SPAlert" */,
+			);
 			productRefGroup = 94CAD489274D7D1D001FE06B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -365,6 +376,7 @@
 			files = (
 				941362C0275108D2003EE6CF /* User.swift in Sources */,
 				941362B827510390003EE6CF /* BankImageView.swift in Sources */,
+				941362CE27513FD5003EE6CF /* UIApplicationExtensions.swift in Sources */,
 				947613AB274FFD2300E02531 /* AmountSelector.swift in Sources */,
 				94CAD48E274D7D1D001FE06B /* ContentView.swift in Sources */,
 				947613B0274FFD4D00E02531 /* AccountSelector.swift in Sources */,
@@ -727,6 +739,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		941362CA27513B8E003EE6CF /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPAlert";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		941362CB27513B8E003EE6CF /* SPAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 941362CA27513B8E003EE6CF /* XCRemoteSwiftPackageReference "SPAlert" */;
+			productName = SPAlert;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94CAD480274D7D1D001FE06B /* Project object */;
 }

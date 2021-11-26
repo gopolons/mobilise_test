@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SPAlert
 
 struct PaymentView: View {
     
@@ -53,6 +54,8 @@ struct PaymentView: View {
             .onAppear {
                 modelData.onAppear()
             }
+        }
+        .spAlert(isPresent: $modelData.alert, title: modelData.alertTitle, message: modelData.alertMessage, duration: 1, dismissOnTap: false, preset: modelData.alertPreset, haptic: .none, layout: .message()) {
         }
     }
 }
