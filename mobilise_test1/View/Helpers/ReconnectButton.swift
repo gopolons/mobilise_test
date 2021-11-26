@@ -1,13 +1,15 @@
 //
-//  GetPaidButton.swift
+//  ReconnectButton.swift
 //  mobilise_test1
 //
-//  Created by Georgy Polonskiy on 25/11/2021.
+//  Created by Georgy Polonskiy on 26/11/2021.
 //
 
 import SwiftUI
 
-struct GetPaidButton: View {
+struct ReconnectButton: View {
+    
+    let function: () -> Void
     
     @Binding var isLoading: Bool
     @State private var isAnimating = false
@@ -16,8 +18,6 @@ struct GetPaidButton: View {
         Animation.linear(duration: 2.0)
             .repeatForever(autoreverses: false)
     }
-    
-    let function: () -> Void
     
     var body: some View {
         Button {
@@ -32,7 +32,6 @@ struct GetPaidButton: View {
                 }
             }
         } label: {
-            
             ZStack {
                 Circle()
                     .foregroundColor(isLoading ? .gray : .blue)
@@ -49,7 +48,7 @@ struct GetPaidButton: View {
                         .onDisappear { self.isAnimating = false }
                         
                 } else {
-                    Text("Request amount")
+                    Text("Retry connection")
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                 }
@@ -60,14 +59,15 @@ struct GetPaidButton: View {
         }
         .buttonStyle(PlainButtonStyle())
 
+
     }
 }
 
-struct GetPaidButton_Previews: PreviewProvider {
+struct ReconnectButton_Previews: PreviewProvider {
     
     @State static var previewBind = false
     
     static var previews: some View {
-        GetPaidButton(isLoading: $previewBind, function: {})
+        ReconnectButton(function: {}, isLoading: $previewBind)
     }
 }

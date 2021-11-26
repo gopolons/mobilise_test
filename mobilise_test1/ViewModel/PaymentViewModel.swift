@@ -29,6 +29,10 @@ final class PaymentViewModel: ObservableObject {
     
     @Published var alertPreset = SPAlertIconPreset.done
     
+    @Published var noConnection = false
+    
+    @Published var reconnecting = false
+    
     private func failError() {
         self.alertTitle = "Error"
         self.alertMessage = "Failure to retrieve data"
@@ -40,8 +44,8 @@ final class PaymentViewModel: ObservableObject {
         self.alertTitle = "No connection"
         self.alertMessage = "Check your internet connection"
         self.alertPreset = .error
+        self.noConnection = true
         self.alert.toggle()
-
     }
     
     
@@ -62,6 +66,18 @@ final class PaymentViewModel: ObservableObject {
     }
 
 
+    func reconnect() {
+        
+        dataRepo.fetchUser { data, err in
+            guard err == nil else {
+                self.connectionError()
+                self.reconnecting.toggle()
+                return
+            }
+            self.noConnection = false
+            self.userAccounts.append(contentsOf: data!.accounts)
+        }
+    }
     
     func onAppear() {
         dataRepo.fetchUser { data, err in

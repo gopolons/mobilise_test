@@ -36,11 +36,17 @@ struct PaymentView: View {
                     HStack {
                         Spacer()
                         
-                        GetPaidButton(isLoading: $modelData.loading, function: {
-                            modelData.sendRequest()
-                        })
-                            .disabled(modelData.userAccounts == [] ? true : false)
-                        
+                        if modelData.noConnection {
+                            ReconnectButton(function: {
+                                modelData.reconnect()
+                            }, isLoading: $modelData.reconnecting)
+                        } else {
+                            GetPaidButton(isLoading: $modelData.loading, function: {
+                                modelData.sendRequest()
+                            })
+                                .disabled(modelData.userAccounts == [] ? true : false)
+                        }
+
                         Spacer()
                     }
 
